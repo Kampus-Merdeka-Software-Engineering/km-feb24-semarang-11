@@ -27,10 +27,10 @@
         </nav>
         <nav class="navbar-nav">
             <div class="navbar">
-                <a href="#home">Home</a>
-                <a href="#team">Team</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="#home">HOME</a>
+                <a href="#team">TEAM</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
             </div>
             <div class="navbar-extra">
                 <a href="#" id="menu" ><i data-feather="menu"></i></a>
@@ -43,47 +43,64 @@
     <div id="home" class="home-section">
         <div class="headline-section">
             <h1>New York City Property Sales</h1>
-            <p>Database <a href="">Here</a></p>
+            <p>Dataset <a href="https://www.kaggle.com/datasets/new-york-city/nyc-property-sales/data" target="_blank">Here</a></p>
         </div>
     </div>
     
     <!-- home akhir -->
     
     <!-- Our Team awal -->
-    <section id="team" class="team">
+    <div id="team" class="team">
         <h2><span>Our</span> Team</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quae error, iste incidunt nam quos nostrum hic delectus sapiente totam. Repellendus odio, suscipit iusto aspernatur reiciendis quibusdam ipsum pariatur praesentium?</p>
-        
-        <div class="card">
-            <div class="team-card">
-                <img src="team.png" alt="Foto-team" class="team-card-img">
-                <h3 class="team-card-title">Name</h3>
-                <p class="team-card-role" >Role</p>
-            </div>
-                <div class="team-card">
-                    <img src="team.png" alt="Foto-team" class="Team-card-img">
-                    <h3 class="team-card-title">Name</h3>
-                    <p class="team-card-role" >Role</p>
-                </div>
-                <div class="team-card">
-                    <img src="team.png" alt="Foto-team" class="Team-card-img">
-                    <h3 class="team-card-title">Name</h3>
-                    <p class="team-card-role" >Role</p>
-                </div>
-                <div class="team-card">
-                    <img src="team.png" alt="Foto-team" class="team-card-img">
-                    <h3 class="team-card-title">Name</h3>
-                    <p class="team-card-role" >Role</p>
+
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRibcPgnI6XwNPIIMy_8tnHoKFdpqz6mcAP7A&s" style="width:100%">
+                    <div class="container">
+                        <h2>Name</h2>
+                        <p class="title">Team Leader</p>
+                        <p>Some text that describes.</p>
+                        <p>University</p>
+                        <p><button class="button">Social Media</button></p>
+                    </div>
                 </div>
             </div>
-        </section>
+            <div class="column">
+                <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyYf3ArTo30OMbVD8TISYQu8KyhyrrVtc96Q&s" style="width:100%">
+                    <div class="container">
+                        <h2>Name</h2>
+                        <p class="title">Front End</p>
+                        <p>Some text that describes me.</p>
+                        <p>university</p>
+                        <p><button class="button">Social Media</button></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column">
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9vonsfe0eoZTib-sTgOxofs4wANcWR0aYbA&s" style="width:100%">
+                    <div class="container">
+                        <h2>Name</h2>
+                        <p class="title">Deployment Team</p>
+                        <p>Some text that describes me.</p>
+                        <p>university</p>
+                        <p><button class="button">Social Media</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Our Team Akhir -->
     
     <!-- about Awal -->
     <div class="about">
         <div id="about" class="about-section">
-            <h2>About <span>NYC</span></h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, voluptate molestiae voluptates ullam adipisci, veniam aliquam necessitatibus tenetur corrupti nulla eius blanditiis a aut nihil nobis earum deserunt sunt. Laboriosam.</p>
+            <h2>About <span>Dataset</span></h2>
+            <p>This dataset is a record of every building or building unit (apartment, etc.) sold in the New York City property market over a 12-month period.</p>
         </div>
     </div>
     <!-- about Akhir -->
@@ -92,7 +109,7 @@
     <div class="description-section">
             <h2>Description</h2>
             <article>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione illum tempore ex enim repudiandae ipsam ab, dolorem ea molestiae molestias, explicabo fuga in esse ullam, voluptate fugit omnis. Porro, animi.</article>
-        </div>
+    </div>
     <!-- Description akhir -->
     
     <!-- Contact awal -->
@@ -101,19 +118,29 @@
                 <h2>Contact Us</h2>
             </div>
             <div class="box-card">
-                <form>
+                <form action="">
                     <div class="user-box">
                         <div class="form-input">
+                            <i data-feather="user"></i>
                             <input placeholder="Name" type="text" name="" required="">
                         </div>
                         <div class="form-input">
+                            <i data-feather="at-sign"></i>
                             <input placeholder="Email" type="email" name="" required="@gmail.com">
                         </div>
+                        <div>
+                            <label for="gender">Gender:</label>
+                            <select id="gender" class="gender">
+                                <option value="">Please choose your gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
                         <div class="form-input">
-                            <textarea placeholder="Pesan" type="text" name="" required=""></textarea>
+                            <textarea placeholder="Message" type="text" name="" required=""></textarea>
                         </div>
                     </div>
-                        <button>Submit</button>
+                    <button>Submit</button>
                 </form>
             </div>
         </div>
@@ -123,19 +150,33 @@
     <!-- Footer Awal -->
     <Footer>
         <div class="footer-section">
-            <div class="footer">
+            <div class="footer-team">
+                <h2>TEAM <span>11</span></h2>
+                <div class="credit">
+                    <p>Created by <a href="" target="">TEAM 11</a>. | &copy; 2024.</p>
+                </div>
+            </div>
+            <div class="footer-nav">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#team">Team</a>
                 <a href="#contact">Contact</a>
             </div>
+            <div class="social-media">
+                <a href="" target="_blank"><i data-feather="instagram"></i></a>
+                <a href="" target="_blank"><i data-feather="youtube"></i></a>
+                <a href="" target="_blank"><i data-feather="mail"></i></a>
+            </div>
         </div>
     </Footer>
     <!-- Footer Akhir -->
 
+    <!-- My Icon -->
     <script>
         feather.replace()
     </script>
 
+    <!-- Js -->
+    <script src="js/script.js"></script>
 </body>
 </html>

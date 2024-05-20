@@ -2,11 +2,18 @@
     text-decoration: none;
     margin: 0px;
     font-family: "Plus Jakarta Sans", sans-serif;
+    outline: none;
+    border: none;
 }
+
+*:not(img), *:before, *:after {
+    box-sizing: inherit;
+  }
 
 body {
     background-color: #D3d3d3;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 h2, article {
@@ -18,17 +25,9 @@ html {
     scroll-behavior: smooth;
   }
 
-h1 {
-    color: #E0FFFF;
-}
-
 span {
     color: #FFB700;
 }
-
-/* .all {
-    padding: 10px 50px;
-} */
 
 /* Navbar section */
 .header-section {
@@ -49,7 +48,6 @@ span {
     padding-left: 20px;
 }
 
-
 .navbar-nav {
     display: flex;
     align-items: center;
@@ -63,11 +61,46 @@ span {
 
 .navbar a{
     padding: 0 15px;
+}
+
+.navbar-nav .navbar a{
+    color: black;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.navbar-nav .navbar a:hover {
+    color: #E0FFFF;
+}
+
+.navbar-nav .navbar a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid #E0FFFF;
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar-nav .navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar-nav .navbar-extra a{
+    color: black;
+    margin: 0 0.5rem;
+}
+
+.navbar-nav .navbar-extra a:hover {
     color: black;
 }
 
 a{
     font-weight: bold;
+}
+
+#menu {
+    display: none;
 }
 
 /* Home Section */
@@ -97,17 +130,29 @@ a{
     font-size: 25px;
 }
 
-.headline-section p, a {
+.headline-section h1{
+    color: #E0FFFF;
+    font-size: 50px;
+}
+
+.headline-section p {
+    color: #E0FFFF;
+    font-size: 30px;
+}
+
+.headline-section a {
     color: #E0FFFF;
 }
+
 /* Our Team */
-section {
+.team {
     margin: 0px !important;
     padding: 10px 50px;
 }
 .team h2 {
     text-align: center;
     padding-top: 20px;
+    padding-bottom: 10px;
     font-weight: 900;
 }
 
@@ -123,7 +168,65 @@ section h2 span{
     line-height: 1.6; 
 }
 
-.team .card {
+.container h2 {
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+  
+  .row .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+
+  .row .column img{
+    height: 20rem;
+    border-radius: 10px;
+  }
+  
+  
+  .row .column .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  
+  .row .column .card .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .column .card .container .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  
+  .row .column .card .container button:hover {
+    background-color: #555;
+  }
+
+/* .team .card {
     display: flex;
     flex-wrap: wrap;
     margin-top: 80px;
@@ -141,12 +244,13 @@ section h2 span{
 
 .team .card .team-card img {
     margin: 16px auto 8px;
-}
+} */
 
 /* About Section */
 .about {
     margin: 0px !important;
     padding: 10px 50px;
+    background-color: #fff;
 
 }
 .about-section {
@@ -157,10 +261,6 @@ section h2 span{
     line-height: 1.6; 
     margin-bottom: 500px;
     margin-top: 50px;
-}
-
-.about-section h2 span {
-    color: #E0FFFF;
 }
 
 
@@ -175,46 +275,68 @@ section h2 span{
     line-height: 1.6;
 }
 
-.description-section article {
-    color: black; 
-}
-
 /* Contact */
 .contact-section h2 {
     text-align: center;
     margin: 10px 0;
 }
+
+.contact-section .box-card form .form-input {
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 10px;
+    border-radius: 5px;
+    border: solid 1px black;
+    width: 100%;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.contact-section .box-card form .form-input input {
+    padding: 5px 15px;
+}
+
 .box-card {
-    width: 400px;
-    background-color: black;
+    width: 30%;
+    background-color: #fff;
     padding: 30px;
     border-radius: 10px;
     margin: auto;
-    box-shadow: 15px 15px 30px #03e9f4;
-    border-bottom: 1px solid #fff;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #000;
     margin-bottom: 20px;
 }
 
 .contact-section form button {
     padding: 10px 20px;
-    color: #03e9f4;
+    color: #000;
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-top: 40px;
+    margin-top: 30px;
     letter-spacing: 4px;
-    border-radius: 10px;
-    background:transparent;
+    border-radius: 5px;
+    background: #d3d3d3;
 }
 
-input, textarea {
-    width: 100%;
-    border: 0px;
+.contact-section form button:hover {
+    background-color: #555;
+  }
+
+.box-card .gender {
+    border: solid 1px;
+    margin-bottom: 5px;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+textarea {
     outline: none;
-    border: solid 1px #03e9f4;
     padding: 10px 0;
     border-radius: 5px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 textarea {
@@ -223,26 +345,174 @@ textarea {
 
 /* Footer */
 .footer-section{
-    background-color:#008B8B;
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
     text-align: center;
-    padding: 8px 0 24px;
     width: 100%;
+    padding: 20px 0;
+    height: auto;
 }
 
-.footer {
-    padding-top: 20px;
+.footer-section .footer-team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.footer a {
-    padding-left: 15px;
-    color: #E0FFFF;
+.footer-section .footer-nav {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-start;
+    border-left: 3px solid black;
+    height: 110px;
+}
+
+.footer-section .social-media {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-right: 20px;
+    border-left: 3px solid black;
+    height: 110px;
+}
+
+.footer-section .footer-team a {
+    color: black;
+}
+
+.footer-section .footer-nav a {
+    padding-left: 10px;
+    color: black;
+}
+
+.footer-section .social-media a {
+    padding-left: 10px;
+    color: black;
 }
 
 /* Media Query */
 
-/* @media (max-width: 1224px) {
-    .home-section::after {
-        bottom: 241px;
+/* laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+      }
+
+      .contact-section .box-card {
+        width: 40%;
     }
-} */
+}
+
 /* Tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 60%;
+    }
+
+
+    .home-section .headline-section h1{
+        font-size: 40px;
+    }
+
+    .home-section .headline-section p{
+        font-size: 25px;
+    }
+
+    .header-section .logo-header img{
+        height: 40px;
+        width: 40px;
+    }
+    
+    .navbar-nav .navbar-extra {
+        padding-left: 5rem;
+        padding-right: 0;
+      }
+
+    #menu {
+        display: inline-block;
+    }
+
+    .navbar-nav .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: rgba(211, 211, 211, 0.8);;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+        box-shadow: 0 0 10px 5px #d3d3d3;
+    }
+
+    .navbar-nav .navbar.active {
+        right: 0;
+    }
+
+    .navbar-nav .navbar a{
+        color: black;
+        display: block;
+        margin: 1.5rem;
+        padding: 15px;
+        font-size: 2rem;
+    }
+
+    .navbar-nav .navbar a::after {
+        transform-origin: 0 0;
+    }
+    
+    .navbar-nav .navbar a:hover::after {
+        transform: scaleX(0.2);
+    }
+
+    .contact-section .box-card, .form-input, input, textarea {
+        width: 50%;
+        font-size: 10px;
+    }
+
+    .box-card .gender {
+        width: 90%;
+        font-size: 10px;
+    }
+
+    .contact-section form button {
+        font-size: 90%;
+        letter-spacing: 2px;
+    }
+
+    .footer-section .social-media i {
+        size: 2px;
+    }
+
+    .contact-section .box-card {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .row .column {
+      width: 100%;
+      display: block;
+    }
+
+    .row .column .card .container button {
+        font-size: 10px;
+    }
+    .contact-section .box-card {
+        width: 60%;
+    }
+  }
+
+/* Mobile */
+@media (max-width: 460px) {
+    html {
+        font-size: 50%;
+      }
+
+    .contact-section .box-card {
+        width: 80%;
+    }
+}
