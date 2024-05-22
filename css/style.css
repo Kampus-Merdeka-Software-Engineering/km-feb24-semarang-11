@@ -1,9 +1,11 @@
 * {
     text-decoration: none;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     font-family: "Plus Jakarta Sans", sans-serif;
     outline: none;
     border: none;
+    box-sizing: border-box;
 }
 
 *:not(img), *:before, *:after {
@@ -13,7 +15,7 @@
 body {
     background-color: #D3d3d3;
     text-decoration: none;
-    box-sizing: border-box;
+    min-height: 100vh;
 }
 
 h2, article {
@@ -44,7 +46,7 @@ span {
 
 .header-section .logo-header img{
     height: 50px;
-    width: 50px;
+    width: 70px;
     padding-left: 20px;
 }
 
@@ -144,10 +146,10 @@ a{
     color: #E0FFFF;
 }
 
+
 /* Our Team */
-.team {
-    margin: 0px !important;
-    padding: 10px 50px;
+.team{
+    padding: 20px 0;
 }
 .team h2 {
     text-align: center;
@@ -168,83 +170,137 @@ section h2 span{
     line-height: 1.6; 
 }
 
-.container h2 {
-    text-decoration: underline;
-    padding-bottom: 10px;
-}
-  
-  .row .column {
-    float: left;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
-
-  .row .column img{
-    height: 20rem;
-    border-radius: 10px;
-  }
-  
-  
-  .row .column .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 10px;
-  }
-  
-  .row .column .card .container {
-    padding: 0 16px;
-  }
-  
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .title {
-    color: grey;
-  }
-  
-  .column .card .container .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
+.slide-container{
+    max-width: 1120px;
     width: 100%;
-    margin-bottom: 20px;
-    margin-top: 10px;
-  }
-  
-  .row .column .card .container button:hover {
-    background-color: #555;
-  }
-
-/* .team .card {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 80px;
-    justify-content: center;
+    padding: 40px 0;
 }
 
-.team .card .team-card{
+.slide-content{
+    margin: 40px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.card{ 
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+.image-content, .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+.image-content{
+    position: relative;
+    row-gap: 5px;
+    padding: 25px 0;
+}
+
+.card-image{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 3px;
+}
+
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #555;
+    border-radius: 25px 25px 0 25px;
+}
+
+.overlay::before,
+.overlay::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #555;
+}
+
+.overlay::after{
+    border-radius: 0 25px 0 0;
+    background-color: #fff;
+}
+
+.card-image .card-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #000;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+.description{
+    font-size: 14px;
+    color: #707070;
     text-align: center;
 }
 
-.team .card .team-card img {
-    border-radius: 50%;
-    width: 50%;
+.button{
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 8px 16px;
+    background-color: #000;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.team .card .team-card img {
-    margin: 16px auto 8px;
-} */
+.button:hover{
+    background-color: #555;
+}
+
+.slide-container .swiper-navBtn{
+    color: #ffff;
+    transition: color 0.3s ease;
+    margin: 0 -10px;
+}
+
+.swiper-navBtn:hover{
+    color: #808080;
+}
+
+.swiper-navBtn::before, .swiper-navBtn::after{
+    font-size: 40px;
+}
+
+.swiper-button-next{
+    right: 0;
+}
+
+.swiper-button-prev{
+    left: 0;
+}
+
+.slide-container .swiper-pagination-bullet{
+    background-color: #ffff;
+    opacity: 1;
+}
+
+.slide-container .swiper-pagination-bullet-active{
+    background-color: #808080;
+}
 
 /* About Section */
 .about {
@@ -466,6 +522,14 @@ textarea {
     
     .navbar-nav .navbar a:hover::after {
         transform: scaleX(0.2);
+    }
+
+    .slide-content{
+        margin: 30px 10px;
+    }
+
+    .slide-container .swiper-navBtn{
+        display: none;
     }
 
     .contact-section .box-card, .form-input, input, textarea {
