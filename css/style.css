@@ -308,15 +308,13 @@ a{
 
 /* About Section */
 .about-section {
-    margin: 0px !important;
-    padding: 10px 0;
+    margin: 10px auto !important;
+    padding: 10px;
     background-color: #fff;
-
 }
+
 .about {
     text-align: center;
-    max-width: 90%;
-    margin: auto;
     font-weight: 500;
     line-height: 1.6; 
     margin-bottom: 500px;
@@ -354,6 +352,7 @@ a{
 
 .contact-section .box-card form .form-input input {
     padding: 5px 15px;
+    width: 90%;
 }
 
 .box-card {

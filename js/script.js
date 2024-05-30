@@ -43,3 +43,41 @@ var swiper = new Swiper(".slide-content", {
       },
     },
   });
+
+  const inputField = document.getElementById("input-field");
+  const listTodo = document.getElementById("list-todo")
+
+ function addTodo() {
+  const inputValue = inputField.value;
+
+  const li = document.createElement("li");
+  const div = document.createElement("div");
+  const input = document.createElement("input");
+  const label = document.createElement("label");
+  const span = document.createElement("span");
+
+  div. classList.add("input-label")
+  label.innerHTML = inputValue;
+
+  input.type = "checkbox";
+  input.on
+
+
+  // listTodo.innerHTML += `
+  //   <li>
+  //   <div class="input-label">
+  //       <input type="checkbox" checked />
+  //       <label>${inputValue}</label>
+  //   </div>
+  //   <span class="close">X</span>
+  // </li>
+  // `;
+ }
+
+ function removeTodo() {
+
+ }
+
+ function checkTodo() {
+
+ }
