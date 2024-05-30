@@ -258,6 +258,20 @@ a{
     text-align: center;
 }
 
+.card-content{
+    height: 15rem;
+}
+
+.card-content .description{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.card-content p{
+    font-weight: bold;
+}
+
+
 .card-content a:link, a:visited {
     background-color: #0A66C2;
     color: #fff;
@@ -452,6 +466,10 @@ textarea {
 @media (max-width: 1366px) {
     html {
         font-size: 75%;
+      }
+
+      .card-content {
+        height: 18rem;
       }
 
       .contact-section .box-card {
