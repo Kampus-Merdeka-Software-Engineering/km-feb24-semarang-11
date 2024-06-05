@@ -349,7 +349,7 @@ a{
     margin: 20px;
     width: 10rem;
     height: 80px;
-    background-color: #555;
+    background-color: #0A66C2;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(128, 128, 128, 1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -361,32 +361,39 @@ a{
     animation: backgroundChangeAnimation 0.3s forwards;
 }
 
+.text {
+    margin-top: 20px;
+}
+
 
 /* Description */
 .description-section {
     text-align: center;
-    /* background-color: #fff; */
     padding-top: 10px;
-    margin: auto;
+    margin-top: 3rem;
     font-weight: 500;
     line-height: 1.6;
+}
+
+article {
+    font-weight: 500;
 }
 
 .box-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1rem;
-    /* margin-top: 5rem; */
     padding: 5rem 2rem;
 }
 
 .box {
-    border: 1px solid #000;
+    border: 1px solid #0b98d9;
     border-radius: 6px;
     padding: 2rem;
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 2;
+    background-color: #fff;
 }
 
 
@@ -515,7 +522,7 @@ textarea {
         background-color: white;
     }
     to{
-        background-color: #858585;
+        background-color: #0b98d9;
     }
 }
 
