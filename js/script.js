@@ -1,3 +1,19 @@
+// animation
+anime({
+  targets: '#title',
+  translateY: [
+    {value: -50, duration: 500},
+    {value: 0, duration: 800}
+  ],
+  opacity: [
+    {value: 0, duration: 500},
+    {value: 1, duration: 800}
+  ],
+  easing: 'easeInOutQuad',
+  loop: true,
+  direction: 'alternate'
+});
+
 // class active
 const navbar = document.querySelector('.navbar');
 // ketika menu di klik
@@ -61,17 +77,6 @@ var swiper = new Swiper(".slide-content", {
 
   input.type = "checkbox";
   input.on
-
-
-  // listTodo.innerHTML += `
-  //   <li>
-  //   <div class="input-label">
-  //       <input type="checkbox" checked />
-  //       <label>${inputValue}</label>
-  //   </div>
-  //   <span class="close">X</span>
-  // </li>
-  // `;
  }
 
  function removeTodo() {

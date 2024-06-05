@@ -15,7 +15,7 @@
 body {
     background-color: #D3d3d3;
     text-decoration: none;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 h2, article {
@@ -322,32 +322,81 @@ a{
 
 /* About Section */
 .about-section {
-    margin: 10px auto !important;
+    /* margin: 10px auto !important; */
     padding: 10px;
     background-color: #fff;
+    height: 500px;
 }
 
 .about {
     text-align: center;
     font-weight: 500;
     line-height: 1.6; 
-    margin-bottom: 500px;
     margin-top: 50px;
+}
+
+.animation-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.animation {
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    width: 10rem;
+    height: 80px;
+    background-color: #555;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(128, 128, 128, 1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.animation:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(128, 128, 128, 2);
+    animation: backgroundChangeAnimation 0.3s forwards;
 }
 
 
 /* Description */
 .description-section {
     text-align: center;
+    /* background-color: #fff; */
     padding-top: 10px;
-    max-width: 90%;
     margin: auto;
-    margin-bottom: 500px;
     font-weight: 500;
     line-height: 1.6;
 }
 
+.box-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+    /* margin-top: 5rem; */
+    padding: 5rem 2rem;
+}
+
+.box {
+    border: 1px solid #000;
+    border-radius: 6px;
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 2;
+}
+
+
+
 /* Contact */
+
+.contact-section{
+    margin: 2rem 0;
+}
+
 .contact-section h2 {
     text-align: center;
     margin: 10px 0;
@@ -458,6 +507,16 @@ textarea {
 .footer-section .social-media a {
     padding-left: 10px;
     color: black;
+}
+
+/* key frames */
+@keyframes backgroundChangeAnimation {
+    from{
+        background-color: white;
+    }
+    to{
+        background-color: #858585;
+    }
 }
 
 /* Media Query */
