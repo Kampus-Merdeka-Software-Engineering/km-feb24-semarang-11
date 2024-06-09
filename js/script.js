@@ -60,29 +60,14 @@ var swiper = new Swiper(".slide-content", {
     },
   });
 
-  const inputField = document.getElementById("input-field");
-  const listTodo = document.getElementById("list-todo")
 
- function addTodo() {
-  const inputValue = inputField.value;
+//  Untuk mengirim data inputan ke Spreadsheet team 11  //
+ const scriptURL ='https://script.google.com/macros/s/AKfycbweFerr8OmwSAWv7Cbll7n1pLYaxbMbbXhzd5p0j53T-hq5ZChRqZCpSaL5ZndjsUY8/exec'
+ const form = document.forms ['contactform']
 
-  const li = document.createElement("li");
-  const div = document.createElement("div");
-  const input = document.createElement("input");
-  const label = document.createElement("label");
-  const span = document.createElement("span");
-
-  div. classList.add("input-label")
-  label.innerHTML = inputValue;
-
-  input.type = "checkbox";
-  input.on
- }
-
- function removeTodo() {
-
- }
-
- function checkTodo() {
-
- }
+ form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => console.log ('Success!', response))
+    .catch(error => console.error ('Error!', error.message))
+ })
