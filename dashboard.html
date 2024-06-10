@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  
+  </head>
+  <body>
+    <header class="box--header">
+      <h2 class="box--no-change">Dashboard NYC Property</h2>
+    </header>
+
+    <main>
+        <section id="dashboard">  
+            <div class="wrapper">
+            <div class="card">
+                <h4>
+                    TOTAL COMMERCIAL UNIT
+                </h4>
+                <h3 id="total-commercial-unit">
+                </h3>
+            </div>
+    
+            <div class="card">
+                <h4>
+                    TOTAL RESIDENTIAL UNIT
+                </h4>
+                <h3 id="total-residential-unit">
+                </h3>
+             </div>
+    
+             <div class="card">
+                <h4>
+                    TOTAL SALES
+                </h4>
+                <h3 id="total-sales-price">
+                </h3>
+            </div>
+    
+            <div class="card">
+                <h4>
+                    TOTAL UNITS
+                </h4>
+                <h3 id="total-units">
+                </h3>
+            </div>
+            </div>
+          </section>
+
+
+        <section id="chart1">
+            <h2><i class="fa-solid fa-chart-line"></i> Line Chart</h2>
+            <article>
+            <h1>Total Units Sales per Months</h1>
+            </select>
+            <canvas id="unitsSoldChart"></canvas>
+            </article>
+        </section>
+
+        <section id="chart2">
+            <h2><i class="fa-solid fa-chart-column"></i> Bar Chart</h2>
+            <h1>Total Unit Sales by Borough</h1>
+            <article>
+            <canvas id="totalSalesChart"></canvas>
+            </article>
+        </section>
+
+        <section id="chart3">
+            <h2><i class="fa-solid fa-chart-line"></i> Line Chart</h2>
+            <article>
+            <h1>Total Selling Price per Months</h1>
+            </select>
+            <canvas id="salePriceChart"></canvas>
+            </article>
+        </section>
+
+        <section id="chart4">
+            <h2><i class="fa-solid fa-chart-line"></i> Line Chart</h2>
+            <h1>Gross Square Fit vs Land Square Fit In Sales Level</h1>
+            <article>
+            <canvas id="landVsGrossSquareFeetChart"></canvas>
+            </article>
+        </section>
+
+        <section id="chart5">
+            <h2><i class="fa-solid fa-chart-pie"></i> Pie Chart</h2>
+            <h1>Tax Class Unveiling the Top Sellers in Sales</h1>       
+            <article>
+                <canvas id="taxClassPieChart"></canvas>
+            </article>
+        </section>
+
+        <section id="chart6">
+            <h2><i class="fa-solid fa-chart-column"></i> Bar Chart</h2>
+            <h1>TOP 10 Building Class's Price</h1>
+            <article>
+            <canvas id="salePriceByBuildingClassChart"></canvas>
+            </article>
+        </section>
+
+        <section id="chart7">
+            <h2><i class="fa-solid fa-chart-line"></i> Line Chart</h2>
+            <h1>Residential Unit Sales vs Commercial Unit Sales</h1>
+            <article>
+            <canvas id="unitsByTypeChart"></canvas>
+            </article>
+        </section>
+
+        <section id="chart8">
+            <h2><i class="fa-solid fa-chart-column"></i> Bar Chart</h2>
+            <h1>TOP 10 Unit Development of Sales Over The Time</h1>
+            <article>
+            <canvas id="yearBuiltUnitsChart"></canvas>
+            </article>
+        </section>
+
+    <section id="tabel">
+        <h2><i class="fa-solid fa-table"></i> Data Table</h2>
+        <h2>Building Unit Sales in the New York Property Market</h2>
+        <article>
+            <div>
+                <label for="sort-key">Sort by:</label>
+                <select id="sort-key">
+                  <option value="borough">Borough</option>
+                  <option value="sale price">Sale Price</option>
+                  <option value="sale date">Sale Date</option>
+                  <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+                </select>
+                <button class="box--button" id="sort-button">Sort</button>
+            </div>
+
+            <div>
+                <label for="filter-key">Filter by:</label>
+                <select id="filter-key">
+                  <option value="-">-</option>
+                  <option value="building class category">
+                    Building Class Category
+                  </option>
+                  <option value="sale month">Sale Month</option>
+                  <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+                </select>
+                <input type="text" id="filter-value" placeholder="Filter value" />
+                <button class="box--button" id="filter-button">Filter</button>
+                <button class="box--button" id="reset">Reset</button>
+            </div>
+            <div>
+                <label for="page-number">Page:</label>
+                <input type="number" id="page-number" min="1" max="" value="1" />
+                <button class="box--button" id="go-to-page-button">Go</button>
+            </div>
+
+            <table border 1 id="data-table"> 
+                <thead>
+                    <tr>
+                        <th>Borough</th>
+                        <th>Neighborhood</th>
+                        <th>Building Class Category</th>
+                        <th>Residential Units</th>
+                        <th>Commercial Units</th>
+                        <th>Total Units</th>
+                        <th>Land Square Feet</th>
+                        <th>Gross Square Feet</th>
+                        <th>Year Built</th>
+                        <th>Tax Class At Time Of Sale</th>
+                        <th>Building Class At Time Of Sale</th>
+                        <th>Sale Price</th>
+                        <th>Sale Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data akan diisi menggunakan JavaScript -->
+                </tbody>
+                <tbody id="data-table-body"></tbody>
+            </table>
+        </article>
+        
+        <div class="pagination_button">
+            <span></span>
+            <div class="index_button"></div>
+        </div>
+    </section>
+    
+
+    </main>
+
+    <footer class="box--footer">
+      <p>&copy; Team 11 - Semarang.</p>
+    </footer>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

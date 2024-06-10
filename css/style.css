@@ -323,7 +323,6 @@ a{
 /* About Section */
 .about-section {
     /* margin: 10px auto !important; */
-    padding: 10px;
     background-color: #fff;
     height: 500px;
 }
@@ -369,7 +368,6 @@ a{
 /* Description */
 .description-section {
     text-align: center;
-    padding-top: 10px;
     margin-top: 3rem;
     font-weight: 500;
     line-height: 1.6;
@@ -424,6 +422,11 @@ article {
     padding: 5px 15px;
     width: 90%;
 }
+
+.error-message {
+    color: red;
+}
+
 
 .box-card {
     width: 30%;
